@@ -1,11 +1,16 @@
 ﻿Console.WriteLine("Enter number of factorial.");
-string input = Console.ReadLine();
+string? input = Console.ReadLine();
+if (input == null)
+{
+    Console.WriteLine("Input is null");
+    return;
+}
 int N = 0;
 try
 {
     N = Int32.Parse(input);
 }
-catch (Exception ex)
+catch (Exception)
 {
     Console.WriteLine("Input is not valid number: " + input);
     return;
